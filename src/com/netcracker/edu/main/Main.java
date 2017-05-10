@@ -8,28 +8,27 @@ import java.util.concurrent.Future;
 public class Main {
 
     public static void main(String[] args) throws InterruptedException {
-//        System.out.println("Thread 1 start");
-//        Thread thread = new Thread(new MyRunable());
-//        thread.setName("Second");
-//        System.out.println(Thread.currentThread());
-//        thread.start();
-//        Thread.sleep(100);
-//        System.out.println("Thread 1 fin");
+        System.out.println("Thread 1 start");
+        Thread thread = new Thread();
+        thread.setName("Second");
+        System.out.println(Thread.currentThread());
+        thread.start();
+        Thread.sleep(100);
+        System.out.println("Thread 1 fin");
 
-        //создать ExecutorService как пул из пяти потоков
-        ExecutorService es1= Executors.newFixedThreadPool(5);
-//поместить задачу в очередь на выполнение
-        Future<String> f1 = es1.submit(new CallableSample());
-        while(!f1.isDone()) {//подождать выполнения задачи
-        }
-        try { //получить результат выполнения задачи
-            System.out.println("task completed : " + f1.get());
-        } catch (InterruptedException ie) {
-            ie.printStackTrace(System.err);
-        } catch (ExecutionException ee) {
-            ee.printStackTrace(System.err);
-        }
-        es1.shutdown();
+//        ExecutorService es1= Executors.newFixedThreadPool(5);
+//        Future<String> f1 = es1.submit(new CallableSample());
+//        while(!f1.isDone()) {
+//            Thread.sleep(100);
+//        }
+//        try {
+//            System.out.println("task completed : " + f1.get());
+//        } catch (InterruptedException ie) {
+//            ie.printStackTrace(System.err);
+//        } catch (ExecutionException ee) {
+//            ee.printStackTrace(System.err);
+//        }
+//        es1.shutdown();
     }
 
     static class MyThread extends Thread {

@@ -11,7 +11,6 @@ public class CallableSample implements java.util.concurrent.Callable<String> {
 
     @Override
     public String call() throws Exception {
-
         return Thread.currentThread().toString();
     }
 }
